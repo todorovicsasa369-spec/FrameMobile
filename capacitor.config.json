@@ -1,0 +1,7 @@
+{
+  "appId": "com.todorovic.framemobile",
+  "appName": "FrameMobile",
+  "webDir": "www",
+  "backgroundColor": "#09090b",
+  "android": { "backgroundColor": "#09090b" }
+}

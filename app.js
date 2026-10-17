@@ -464,6 +464,16 @@ async function render() {
 window.addEventListener('hashchange', render);
 render();
 
-if ('serviceWorker' in navigator && window.isSecureContext) {
+// Android app (Capacitor): hardware back button goes back in the app, exits on Home
+const capApp = window.Capacitor?.Plugins?.App;
+if (capApp) {
+  capApp.addListener('backButton', () => {
+    if (parseHash().parts[0] !== 'home') history.back();
+    else capApp.exitApp();
+  });
+}
+
+// the APK already ships its files locally, a service worker would only cache stale copies there
+if ('serviceWorker' in navigator && window.isSecureContext && !window.Capacitor?.isNativePlatform?.()) {
   navigator.serviceWorker.register('sw.js').catch(() => {});
 }

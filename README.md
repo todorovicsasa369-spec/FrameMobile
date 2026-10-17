@@ -2,7 +2,25 @@
 
 Mobile App (PWA) zum Entdecken von Filmen und Serien, im Stil von frameXTV.
 
-## Starten
+## Online
+
+https://todorovicsasa369-spec.github.io/FrameMobile/ — am Handy öffnen und
+"Zum Startbildschirm hinzufügen" (bzw. "App installieren"). Jeder Push auf `main`
+aktualisiert die Seite automatisch (GitHub Pages).
+
+## Android-App (APK)
+
+```
+npm install
+npm run apk
+```
+
+Ergebnis: `android/app/build/outputs/apk/debug/app-debug.apk`. Braucht JDK 17 und das
+Android SDK (`ANDROID_HOME`). Aufs Handy kopieren und installieren ("Unbekannte Apps
+installieren" für Dateimanager/Browser erlauben). Icons neu erzeugen:
+`python scripts/make-icons.py`.
+
+## Lokal starten
 
 1. `start.bat` doppelklicken (braucht Python).
 2. Am PC öffnet sich `http://localhost:8080`.
